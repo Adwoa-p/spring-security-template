@@ -37,7 +37,8 @@ public class SecurityConfig {
                                 "/v3/api-docs.yaml",
                                 "/v3/api-docs/swagger-config",
                                 "/error",
-                                "/api/v1/auth/**"
+                                "/api/v1/auth/**",
+                                "/oauth2/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
@@ -45,7 +46,8 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class)
+
 
         return http.build();
     }
