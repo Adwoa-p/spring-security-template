@@ -182,12 +182,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 ```json
 {
   "status": "success",
-  "message": "Email verified successfully. You can now login.",
-  "data": {
-    "email": "john.doe@example.com",
-    "emailVerified": true,
-    "verifiedAt": "2026-01-02T10:35:00Z"
-  }
+  "message": "Email verified successfully. You can now login."
 }
 ```
 
@@ -217,11 +212,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 ```json
 {
   "status": "success",
-  "message": "Verification email sent successfully.",
-  "data": {
-    "email": "john.doe@example.com",
-    "sentAt": "2026-01-02T10:40:00Z"
-  }
+  "message": "Verification email sent successfully."
 }
 ```
 
@@ -237,7 +228,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 
 ```json
 {
-  "email": "john.doe@example.com",
+  "username": "john.doe@example.com",
   "password": "SecurePassword123!"
 }
 ```
@@ -278,12 +269,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 ```json
 {
   "status": "success",
-  "message": "Token refreshed successfully",
-  "data": {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-    "tokenType": "Bearer",
-    "expiresIn": 86400
-  }
+  "message": "Token refreshed successfully"
 }
 ```
 
@@ -308,11 +294,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 ```json
 {
   "status": "success",
-  "message": "Password reset link sent to your email.",
-  "data": {
-    "email": "john.doe@example.com",
-    "sentAt": "2026-01-02T11:00:00Z"
-  }
+  "message": "Password reset link sent to your email."
 }
 ```
 
@@ -339,11 +321,7 @@ GET /api/v1/auth/verify-email?token=abc123xyz789
 ```json
 {
   "status": "success",
-  "message": "Password reset successfully. You can now login with your new password.",
-  "data": {
-    "email": "john.doe@example.com",
-    "resetAt": "2026-01-02T11:05:00Z"
-  }
+  "message": "Password reset successfully. You can now login with your new password."
 }
 ```
 
@@ -365,8 +343,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "Logged out successfully",
-  "data": null
+  "message": "Logged out successfully"
 }
 ```
 
@@ -394,7 +371,7 @@ Authorization: Bearer {accessToken}
   "status": "success",
   "message": "User profile retrieved successfully",
   "data": {
-    "userId": "550e8400-e29b-41d4-a716-446655440000",
+    "userId":  1,
     "email": "john.doe@example.com",
     "firstName": "John",
     "lastName": "Doe",
@@ -426,7 +403,7 @@ Authorization: Bearer {accessToken}
 {
   "firstName": "John",
   "lastName": "Smith",
-  "phoneNumber": "+1234567890"
+  "email": "johnsmith@gmail.com"
 }
 ```
 
@@ -435,15 +412,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "Profile updated successfully",
-  "data": {
-    "userId": "550e8400-e29b-41d4-a716-446655440000",
-    "email": "john.doe@example.com",
-    "firstName": "John",
-    "lastName": "Smith",
-    "phoneNumber": "+1234567890",
-    "updatedAt": "2026-01-02T11:30:00Z"
-  }
+  "message": "Profile updated successfully"
 }
 ```
 
@@ -475,10 +444,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "Password changed successfully",
-  "data": {
-    "changedAt": "2026-01-02T11:45:00Z"
-  }
+  "message": "Password changed successfully"
 }
 ```
 
@@ -509,10 +475,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "Account deleted successfully",
-  "data": {
-    "deletedAt": "2026-01-02T12:00:00Z"
-  }
+  "message": "Account deleted successfully"
 }
 ```
 
@@ -599,7 +562,7 @@ Authorization: Bearer {accessToken}
   "status": "success",
   "message": "User retrieved successfully",
   "data": {
-    "userId": "550e8400-e29b-41d4-a716-446655440000",
+    "userId": 1,
     "email": "john.doe@example.com",
     "firstName": "John",
     "lastName": "Doe",
@@ -638,12 +601,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "User roles updated successfully",
-  "data": {
-    "userId": "550e8400-e29b-41d4-a716-446655440000",
-    "roles": ["ROLE_USER", "ROLE_ADMIN"],
-    "updatedAt": "2026-01-02T12:30:00Z"
-  }
+  "message": "User roles updated successfully"
 }
 ```
 
@@ -673,12 +631,7 @@ Authorization: Bearer {accessToken}
 ```json
 {
   "status": "success",
-  "message": "User account status updated successfully",
-  "data": {
-    "userId": "550e8400-e29b-41d4-a716-446655440000",
-    "enabled": false,
-    "updatedAt": "2026-01-02T12:45:00Z"
-  }
+  "message": "User account status updated successfully"
 }
 ```
 
