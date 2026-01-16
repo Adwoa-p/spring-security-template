@@ -84,11 +84,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: your_email@gmail.com
-    password: your_app_password
     properties:
-      mail:
-        smtp:
+      smtp:
           auth: true
           starttls:
             enable: true
@@ -563,7 +560,7 @@ Authorization: Bearer {accessToken}
   "message": "User retrieved successfully",
   "data": {
     "userId": 1,
-    "email": "john.doe@example.com",
+     "email": "john.doe@example.com",
     "firstName": "John",
     "lastName": "Doe",
     "roles": ["ROLE_USER"],

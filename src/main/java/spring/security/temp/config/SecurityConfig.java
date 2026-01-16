@@ -40,6 +40,8 @@ public class SecurityConfig {
                                 "/api/v1/auth/**",
                                 "/oauth2/**"
                         ).permitAll()
+                        .requestMatchers("/api/vi/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/users/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

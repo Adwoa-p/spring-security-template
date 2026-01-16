@@ -33,13 +33,13 @@ public class User implements UserDetails{
     @Column(unique = true)
     private String email;
 
-    @NotBlank(message = "Email is required")
+    @NotBlank(message = "Password is required")
     private String password;
 
-    @NotBlank(message = "Email is required")
+    @NotBlank(message = "First Name is required")
     private String firstName;
 
-    @NotBlank(message = "Email is required")
+    @NotBlank(message = "Last Name is required")
     private String lastName;
 
     private Boolean isDeleted;
@@ -48,6 +48,10 @@ public class User implements UserDetails{
     private Boolean locked=false;
     @Builder.Default
     private Boolean enabled = true;
+
+    @Builder.Default
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> roles = new HashSet<>();
 
 
     @PrePersist
